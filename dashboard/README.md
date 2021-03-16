@@ -1,5 +1,9 @@
 # CampusIoT :: Tutorial :: Dashboard
 
+## Local
+* http://localhost:3000 for Grafana
+* http://localhost:1880 for NodeRED
+
 ## Web site
 * https://dashboard.iot.imag.fr for Grafana
 * https://dashboard-n.iot.imag.fr for NodeRED

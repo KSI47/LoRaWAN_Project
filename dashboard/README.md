@@ -66,6 +66,9 @@ The name is `lorawan`
 ## Operations
 
 ```
+# Build the nodered image
+(cd docker/nodered; ./build.sh)
+
 # launch the composition
 docker-compose up -d
 

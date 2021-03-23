@@ -23,8 +23,8 @@
     {
         "id": "b23a6a86.69b218",
         "type": "tab",
-        "label": "Payloard Codec",
-        "disabled": true,
+        "label": "Payload Codec",
+        "disabled": false,
         "info": ""
     },
     {
@@ -812,8 +812,8 @@
         "y": 180,
         "wires": [
             [
-                "97bd28ab.859f88",
-                "b7a128b1.2adae"
+                "b7a128b1.2adae",
+                "afd53a75.45a108"
             ]
         ]
     },
@@ -825,7 +825,7 @@
         "links": [
             "833669c2.795cb8"
         ],
-        "x": 975,
+        "x": 915,
         "y": 180,
         "wires": []
     },
@@ -1067,10 +1067,10 @@
         "type": "mqtt in",
         "z": "74429ff4.4ff848",
         "name": "Gateway Stat +",
-        "topic": "gateway/1234567890abcdef/event/stats",
+        "topic": "gateway/+/event/stats",
         "qos": "2",
         "datatype": "auto",
-        "broker": "f75893bf.fe0438",
+        "broker": "475864c9.5c678c",
         "x": 120,
         "y": 80,
         "wires": [
@@ -1130,10 +1130,10 @@
         "type": "mqtt in",
         "z": "74429ff4.4ff848",
         "name": "Gateway Up +",
-        "topic": "gateway/1234567890abcdef/event/up",
+        "topic": "gateway/+/event/up",
         "qos": "2",
         "datatype": "auto",
-        "broker": "f75893bf.fe0438",
+        "broker": "475864c9.5c678c",
         "x": 110,
         "y": 240,
         "wires": [
@@ -1212,10 +1212,10 @@
         "type": "mqtt in",
         "z": "74429ff4.4ff848",
         "name": "Gateway Dn +",
-        "topic": "gateway/1234567890abcdef/event/dn",
+        "topic": "gateway/+/event/dn",
         "qos": "2",
         "datatype": "auto",
-        "broker": "f75893bf.fe0438",
+        "broker": "475864c9.5c678c",
         "x": 110,
         "y": 360,
         "wires": [
@@ -1409,5 +1409,40 @@
                 "cbebb845.774e68"
             ]
         ]
+    },
+    {
+        "id": "afd53a75.45a108",
+        "type": "function",
+        "z": "b23a6a86.69b218",
+        "name": "FlattenLPP",
+        "func": "var p = msg.payload;\n\nfunction FlattenLPP(json) {\n\tvar o = {};\n\tfor (const p in json) {\n    \tvar value = json[p];\n    \tif(typeof(value) === 'number') {\n        \to[p] = value;\n    \t} else if(typeof(value) === 'object'){\n        \tfor (const p2 in value) {\n            \tvar value2 = value[p2];\n            \tif(typeof(value2) === 'number') {\n                \to[p + p2] = value2;\n            \t}\n        \t}\n    \t}\n\t}\n\treturn o    \n}\n\nvar json = msg.payload.object;\n\nif(json) {\n\tvar o = FlattenLPP(json);\n\tif(o) {\n    \tmsg.payload.object = o;\n    \treturn msg;\n\t}\n}\n\nreturn undefined;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 730,
+        "y": 180,
+        "wires": [
+            [
+                "97bd28ab.859f88",
+                "54711aaa.3e4874"
+            ]
+        ]
+    },
+    {
+        "id": "54711aaa.3e4874",
+        "type": "debug",
+        "z": "b23a6a86.69b218",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 900,
+        "y": 260,
+        "wires": []
     }
 ]

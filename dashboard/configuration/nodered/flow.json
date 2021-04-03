@@ -35,6 +35,20 @@
         "info": ""
     },
     {
+        "id": "c3b32a0f.68cd18",
+        "type": "tab",
+        "label": "Main flow",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "681c2cbe.c3afd4",
+        "type": "tab",
+        "label": "test down",
+        "disabled": false,
+        "info": ""
+    },
+    {
         "id": "f75893bf.fe0438",
         "type": "mqtt-broker",
         "name": "campusiot",
@@ -383,6 +397,7 @@
         "rawOutput": false,
         "precision": "",
         "retentionPolicy": "",
+        "org": "",
         "x": 560,
         "y": 120,
         "wires": [
@@ -481,7 +496,6 @@
         "wires": [
             [
                 "70a5a5f2.183e34",
-                "cf4442ba.bf396",
                 "9613b1c.90b5ed"
             ]
         ]
@@ -500,7 +514,9 @@
         "y": 220,
         "wires": [
             [
-                "b7a128b1.2adae"
+                "b7a128b1.2adae",
+                "93f43fbf.ee999",
+                "97bd28ab.859f88"
             ]
         ]
     },
@@ -682,27 +698,16 @@
         "func": "var p = msg.payload;\nvar o = p.object;\nif(o){\n    if(o.latitude && o.longitude) {\n        return msg;\n    } else if(o.lat && o.lng) {\n        return msg;\n    }\n}\nreturn undefined;    \n",
         "outputs": 1,
         "noerr": 0,
+        "initialize": "",
+        "finalize": "",
         "x": 720,
         "y": 80,
         "wires": [
             [
-                "975ef738.66ae08"
+                "975ef738.66ae08",
+                "e5553d6e.7881f"
             ]
         ]
-    },
-    {
-        "id": "cf4442ba.bf396",
-        "type": "debug",
-        "z": "b23a6a86.69b218",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "x": 390,
-        "y": 120,
-        "wires": []
     },
     {
         "id": "1928da62.e77bce",
@@ -777,7 +782,7 @@
         "type": "debug",
         "z": "8ef8462d.3e5728",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -791,7 +796,7 @@
         "type": "debug",
         "z": "8ef8462d.3e5728",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -808,12 +813,13 @@
         "func": "if(msg.payload.object) {\n    return msg;\n} else {\n    return null;\n}\n",
         "outputs": 1,
         "noerr": 0,
+        "initialize": "",
+        "finalize": "",
         "x": 429,
         "y": 180,
         "wires": [
             [
-                "b7a128b1.2adae",
-                "afd53a75.45a108"
+                "b7a128b1.2adae"
             ]
         ]
     },
@@ -1052,13 +1058,16 @@
         "id": "73a47132.43aad",
         "type": "debug",
         "z": "74429ff4.4ff848",
-        "name": "",
+        "name": "Down Gateway",
         "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
         "complete": "payload",
-        "x": 1190,
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1200,
         "y": 400,
         "wires": []
     },
@@ -1129,12 +1138,12 @@
         "id": "b06420c9.a43ef",
         "type": "mqtt in",
         "z": "74429ff4.4ff848",
-        "name": "Gateway Up +",
-        "topic": "gateway/+/event/up",
+        "name": "Gateway Up KSI Gateway",
+        "topic": "gateway/0080e1ffff015253/event/up",
         "qos": "2",
         "datatype": "auto",
         "broker": "475864c9.5c678c",
-        "x": 110,
+        "x": 150,
         "y": 240,
         "wires": [
             [
@@ -1211,12 +1220,12 @@
         "id": "8b20689e.6f24f8",
         "type": "mqtt in",
         "z": "74429ff4.4ff848",
-        "name": "Gateway Dn +",
-        "topic": "gateway/+/event/dn",
+        "name": "Gateway Dn KSI Gateway",
+        "topic": "gateway/0080e1ffff015253/event/dn",
         "qos": "2",
         "datatype": "auto",
         "broker": "475864c9.5c678c",
-        "x": 110,
+        "x": 150,
         "y": 360,
         "wires": [
             [
@@ -1244,13 +1253,16 @@
         "id": "ad00a010.971328",
         "type": "debug",
         "z": "74429ff4.4ff848",
-        "name": "",
+        "name": "collect gateways",
         "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
         "complete": "payload",
-        "x": 1190,
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1200,
         "y": 280,
         "wires": []
     },
@@ -1266,7 +1278,8 @@
         "y": 240,
         "wires": [
             [
-                "9925749c.2b32c"
+                "b0d5d539.484398",
+                "628d1119.c7fb2"
             ]
         ]
     },
@@ -1278,7 +1291,8 @@
         "links": [
             "27a7d2a5.b405a6",
             "590961be.974788",
-            "69db27cf.f9d1d8"
+            "69db27cf.f9d1d8",
+            "9e3f9a2b.7d9c38"
         ],
         "x": 1235,
         "y": 240,
@@ -1288,13 +1302,16 @@
         "id": "a9ef9d47.882218",
         "type": "debug",
         "z": "176e4c9f.1fe43b",
-        "name": "",
+        "name": "collect devices",
         "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
         "complete": "payload",
-        "x": 1210,
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1220,
         "y": 320,
         "wires": []
     },
@@ -1306,6 +1323,8 @@
         "func": "\n\nfunction getSubBandsEU868(frequency) {\n    if(frequency>=863000000 && frequency<868000000) {\n        return \"g\";\n    } else if(frequency>=868000000 && frequency<868600000) {\n        return \"g1\";\n    } else if(frequency>=868700000 && frequency<869200000) {\n        return \"g2\";\n    } else if(frequency>=869400000 && frequency<869650000) {\n        return \"g3\";\n    } else if(frequency>=869700000 && frequency<870000000) {\n        return \"g4\";\n    } else {\n        return undefined;\n    }\n    /* Duty Cycle */\n    /*\n    g (863.0 – 868.0 MHz): 1%\n    g1 (868.0 – 868.6 MHz): 1%\n    g2 (868.7 – 869.2 MHz): 0.1%\n    g3 (869.4 – 869.65 MHz): 10%\n    g4 (869.7 – 870.0 MHz): 1%\n    */\n}\n\nvar p = msg.payload;\n\nvar rxInfo = p.rxInfo;\n\nvar ri = undefined;\n\nrxInfo.forEach(function(e) {\n  if(ri === undefined) {\n      ri = e;\n  } else if(e.rssi > ri.rssi) {\n      ri = e;\n  }\n});\n\nri.date = Date.now();\nri.dr = p.txInfo.dr;\nri.frequency = p.txInfo.frequency;\nri.subband = getSubBandsEU868(p.txInfo.frequency);\n// Can not compute timeonair without the frame length\n//ri.toa = TimeOnAir.getLoRaWANTimeOnAir(size, 0, ri.dr)\n\n\nri.redundancy = rxInfo.length;\n\nmsg.payload.radio = ri;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
+        "initialize": "",
+        "finalize": "",
         "x": 960,
         "y": 240,
         "wires": [
@@ -1338,6 +1357,8 @@
         "func": "\nmsg.payload.time = new Date().getTime();\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
+        "initialize": "",
+        "finalize": "",
         "x": 1120,
         "y": 240,
         "wires": [
@@ -1368,12 +1389,12 @@
         "id": "68326ab6.04ff14",
         "type": "mqtt in",
         "z": "176e4c9f.1fe43b",
-        "name": "Devices Rx App 100",
-        "topic": "application/100/device/+/rx",
+        "name": "RX KSI Endpoint",
+        "topic": "application/+/device/e24f43fffe44c33f/rx",
         "qos": "2",
         "datatype": "auto",
         "broker": "475864c9.5c678c",
-        "x": 130,
+        "x": 120,
         "y": 240,
         "wires": [
             [
@@ -1397,6 +1418,7 @@
         "id": "1ad5abf6.5f2d0c",
         "type": "mqtt in",
         "z": "176e4c9f.1fe43b",
+        "d": true,
         "name": "Application Rx EMS LIG",
         "topic": "application/36/device/+/rx",
         "qos": "2",
@@ -1411,38 +1433,414 @@
         ]
     },
     {
-        "id": "afd53a75.45a108",
-        "type": "function",
-        "z": "b23a6a86.69b218",
-        "name": "FlattenLPP",
-        "func": "var p = msg.payload;\n\nfunction FlattenLPP(json) {\n\tvar o = {};\n\tfor (const p in json) {\n    \tvar value = json[p];\n    \tif(typeof(value) === 'number') {\n        \to[p] = value;\n    \t} else if(typeof(value) === 'object'){\n        \tfor (const p2 in value) {\n            \tvar value2 = value[p2];\n            \tif(typeof(value2) === 'number') {\n                \to[p + p2] = value2;\n            \t}\n        \t}\n    \t}\n\t}\n\treturn o    \n}\n\nvar json = msg.payload.object;\n\nif(json) {\n\tvar o = FlattenLPP(json);\n\tif(o) {\n    \tmsg.payload.object = o;\n    \treturn msg;\n\t}\n}\n\nreturn undefined;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "x": 730,
-        "y": 180,
+        "id": "69e691f0.45eec",
+        "type": "mqtt out",
+        "z": "681c2cbe.c3afd4",
+        "name": "TX KSI Endpoint",
+        "topic": "application/101/device/e24f43fffe44c33f/command/down",
+        "qos": "2",
+        "retain": "false",
+        "broker": "475864c9.5c678c",
+        "x": 780,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "24388869.f24d08",
+        "type": "inject",
+        "z": "681c2cbe.c3afd4",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 230,
+        "y": 260,
         "wires": [
             [
-                "97bd28ab.859f88",
-                "54711aaa.3e4874"
+                "3bd3929.8505b6e"
             ]
         ]
     },
     {
-        "id": "54711aaa.3e4874",
-        "type": "debug",
-        "z": "b23a6a86.69b218",
+        "id": "3bd3929.8505b6e",
+        "type": "function",
+        "z": "681c2cbe.c3afd4",
         "name": "",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 490,
+        "y": 260,
+        "wires": [
+            [
+                "69e691f0.45eec",
+                "ada68b0f.94df98"
+            ]
+        ]
+    },
+    {
+        "id": "ada68b0f.94df98",
+        "type": "debug",
+        "z": "681c2cbe.c3afd4",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 760,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "2670a27b.bdf2ce",
+        "type": "function",
+        "z": "c3b32a0f.68cd18",
+        "name": "Alert type 1",
+        "func": "var objectJSON = msg.payload.object\n\nif (objectJSON.fire)\n    return msg;\n    \nelse \n    return undefined;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 620,
+        "y": 180,
+        "wires": [
+            [
+                "619e6175.5f3bd"
+            ]
+        ]
+    },
+    {
+        "id": "f339d792.6604e8",
+        "type": "function",
+        "z": "c3b32a0f.68cd18",
+        "name": "Alert type 2",
+        "func": "var objectJSON = msg.payload.object\n\nif (objectJSON.inputButton)\n    return msg;\n    \nelse \n    return undefined;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 610,
+        "y": 260,
+        "wires": [
+            [
+                "619e6175.5f3bd"
+            ]
+        ]
+    },
+    {
+        "id": "677acb8d.79f144",
+        "type": "function",
+        "z": "c3b32a0f.68cd18",
+        "name": "is tempreture is higher than 70° ?",
+        "func": "var objectJSON = msg.payload.object \n\nif ( objectJSON ) {\n    if (objectJSON.temperatureSensor1 >= 70 )\n        msg.payload.object = {\"fire\" : \"true\"}\n    else\n        msg.payload.object = {\"fire\" : \"false\"}\n    \n    return msg;\n}\n\n    \nreturn undefined;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 360,
+        "y": 320,
+        "wires": [
+            [
+                "2670a27b.bdf2ce",
+                "6140ecca.50c4f4"
+            ]
+        ]
+    },
+    {
+        "id": "5039c97a.f37668",
+        "type": "function",
+        "z": "c3b32a0f.68cd18",
+        "name": "Is push button in endpoint On ?",
+        "func": "var objectJSON = msg.payload.object \n\nif ( objectJSON ) {\n    \n    if (objectJSON.digitalInput5)\n        msg.payload.object = {\"inputButton\" : \"true\"}\n    else\n        msg.payload.object = {\"inputButton\" : \"false\"}\n    \n    return msg;\n}\n\n    \nreturn undefined;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 370,
+        "y": 380,
+        "wires": [
+            [
+                "f339d792.6604e8",
+                "a26c82d8.01e1f"
+            ]
+        ]
+    },
+    {
+        "id": "72fce6c1.edab78",
+        "type": "inject",
+        "z": "c3b32a0f.68cd18",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 190,
+        "y": 100,
+        "wires": [
+            [
+                "2670a27b.bdf2ce"
+            ]
+        ]
+    },
+    {
+        "id": "673aa5f.aa99d5c",
+        "type": "inject",
+        "z": "c3b32a0f.68cd18",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 150,
+        "y": 180,
+        "wires": [
+            [
+                "f339d792.6604e8"
+            ]
+        ]
+    },
+    {
+        "id": "9e3f9a2b.7d9c38",
+        "type": "link in",
+        "z": "c3b32a0f.68cd18",
+        "name": "",
+        "links": [
+            "5a91beaa.681d28"
+        ],
+        "x": 175,
+        "y": 440,
+        "wires": [
+            [
+                "677acb8d.79f144",
+                "5039c97a.f37668"
+            ]
+        ]
+    },
+    {
+        "id": "619e6175.5f3bd",
+        "type": "function",
+        "z": "c3b32a0f.68cd18",
+        "name": "LaunchAlert",
+        "func": "// var objectJSON = msg.payload.object\n\n//if (objectJSON.fire) {\n//    msg.payload.object = {\"alertType\" : \"type 1\"}\n//    return msg;\n//}\n\n//if (objectJSON.inputButton) {\n//    msg.payload.object = {\"alertType\" : \"type 2\"}\n//    return msg;\n//}\n    \n//else \n //   return undefined;\nvar objectJSON = msg.payload.object\n\nif (objectJSON) {\n    msg.payload.object = {\"alertType1\" : objectJSON.fire ,\n                            \"alertType2\" : objectJSON.inputButton}\n    return msg;\n}\n \nreturn undefined;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 840,
+        "y": 240,
+        "wires": [
+            [
+                "3f3937ee.1ae9d8",
+                "aaa7dc85.83f58",
+                "beac444c.3c8898"
+            ]
+        ]
+    },
+    {
+        "id": "aaa7dc85.83f58",
+        "type": "mqtt out",
+        "z": "c3b32a0f.68cd18",
+        "name": "TX KSI Endpoint",
+        "topic": "application/101/device/e24f43fffe44c33f/command/down",
+        "qos": "2",
+        "retain": "false",
+        "broker": "475864c9.5c678c",
+        "x": 1020,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "3f3937ee.1ae9d8",
+        "type": "mqtt out",
+        "z": "c3b32a0f.68cd18",
+        "name": "TX KSI Endpoint",
+        "topic": "application/101/device/e24f43fffe44c33f/command/down",
+        "qos": "2",
+        "retain": "false",
+        "broker": "475864c9.5c678c",
+        "x": 1080,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "beac444c.3c8898",
+        "type": "debug",
+        "z": "c3b32a0f.68cd18",
+        "name": "output function",
         "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
+        "complete": "payload",
+        "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 900,
-        "y": 260,
+        "x": 1090,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "a26c82d8.01e1f",
+        "type": "debug",
+        "z": "c3b32a0f.68cd18",
+        "name": "inputButton",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 720,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "6140ecca.50c4f4",
+        "type": "debug",
+        "z": "c3b32a0f.68cd18",
+        "name": "fire",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 680,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "e5553d6e.7881f",
+        "type": "debug",
+        "z": "b23a6a86.69b218",
+        "name": "test2",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1060,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "93f43fbf.ee999",
+        "type": "debug",
+        "z": "b23a6a86.69b218",
+        "name": "test1",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 920,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "b0d5d539.484398",
+        "type": "function",
+        "z": "176e4c9f.1fe43b",
+        "name": "FlattenLPP",
+        "func": "var p = msg.payload;\n\nfunction FlattenLPP(json) {\n\tvar o = {};\n\tfor (const p in json) {\n    \tvar value = json[p];\n    \tif(typeof(value) === 'number') {\n        \to[p] = value;\n    \t} else if(typeof(value) === 'object'){\n        \tfor (const p2 in value) {\n            \tvar value2 = value[p2];\n            \tif(typeof(value2) === 'number') {\n                \to[p + p2] = value2;\n            \t}\n        \t}\n    \t}\n\t}\n\treturn o    \n}\n\nvar json = msg.payload.object;\n\nif(json) {\n\tvar o = FlattenLPP(json);\n\tif(o) {\n    \tmsg.payload.object = o;\n    \treturn msg;\n\t}\n}\n\nreturn undefined;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 610,
+        "y": 340,
+        "wires": [
+            [
+                "9925749c.2b32c",
+                "3d2d0722.fd6588"
+            ]
+        ]
+    },
+    {
+        "id": "628d1119.c7fb2",
+        "type": "debug",
+        "z": "176e4c9f.1fe43b",
+        "name": "AvantFlatten",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 780,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "3d2d0722.fd6588",
+        "type": "debug",
+        "z": "176e4c9f.1fe43b",
+        "name": "AprèsFlatten",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 920,
+        "y": 320,
         "wires": []
     }
 ]

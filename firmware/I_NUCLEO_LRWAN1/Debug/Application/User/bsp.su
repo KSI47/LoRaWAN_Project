@@ -1,0 +1,6 @@
+bsp.c:74:6:BSP_sensor_Read	32	static
+bsp.c:98:6:BSP_sensor_Init	8	static
+bsp.c:121:6:BSP_LED_Modem_Init	48	static
+bsp.c:148:6:BSP_LED_Modem_DeInit	16	static
+bsp.c:165:6:BSP_LED_Modem_On	8	static
+bsp.c:175:6:BSP_LED_Modem_Off	8	static

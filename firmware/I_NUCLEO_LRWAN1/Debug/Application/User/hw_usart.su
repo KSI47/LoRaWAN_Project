@@ -1,0 +1,6 @@
+hw_usart.c:195:19:HW_UART_Modem_Init	8	static
+hw_usart.c:240:6:HAL_UART_MspInit	32	static
+hw_usart.c:301:6:HAL_UART_MspDeInit	8	static
+hw_usart.c:340:6:HW_UART_Modem_IRQHandler	24	static
+hw_usart.c:422:12:HW_UART_Modem_IsNewCharReceived	0	static,ignoring_inline_asm
+hw_usart.c:446:9:HW_UART_Modem_GetNewChar	12	static,ignoring_inline_asm

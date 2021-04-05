@@ -12,7 +12,7 @@ Ceci est un mini projet, éffectué dans le cadre du cours de M2M et IoT à l'UG
 ### Matériel
 Kit STM32 Nucleo contenant :
 - **End-point** : Borne Nucleo L073RZ équipé d'un shield I-NUCLEO-LRWAN1
-- **Gateway**
+- **Gateway** : Passerelle NUCLEO-F746ZG 
 
 ### Environnement de développement
 - STMCubeIDE avec expansion STM32CubeExpansion_LRWAN_1.3.1

@@ -12,25 +12,15 @@
 
 ## Données collectées
 
-LoRaWanProject collecte et traite les données suivantes de ses utilisateurs Service : prénom, nom, email, numéro de téléphone, fonction et, le cas échéant, adresse postale, votre pays, ainsi que la géo-localisation.
+LoRaWanProject collecte et traite les données suivantes de ses utilisateurs Service : prénom, nom, email, numéro de téléphone, votre pays, ainsi que la géo-localisation.
 
 Nous veillons à ne collecter que des données strictement nécessaires à la finalité des traitements mis en œuvre.
 
 ## Finalités de la collecte
 
-Les traitements mis en œuvre répondent à des finalités explicites, légitimes et déterminées. Le traitement des données à caractère personnel est nécessaire à l’exécution des prestations de LoRaWanProject.
-
 Le traitement de vos données est fondé principalement sur la satisfaction des intérêts légitimes poursuivis par LoRaWanProject et pour les finalités suivantes :
-La gestion de votre inscription et access au service;
-    La localisation de l'appareil en cas d'incendie;
-    
-    
-## Information des utilisateurs
-
-Tout utilisateur pourra être informé :
-- De l’identité du responsable du traitement ;
-- De la finalité poursuivie par le traitement auquel les données sont destinées ;
-- Des destinataires des données ;
+- La gestion de votre inscription et access au service;
+- La localisation de l'appareil en cas d'incendie;
     
 
 ## Destinataires des données
@@ -44,9 +34,7 @@ La divulgation à des tiers des données à caractère personnel fournies ne pou
 ## Où stockons-nous les données personnelles ?
 
 Les données personnelles de nos clients sont stockées soit dans nos bases de données.
-
 Les serveurs d’hébergement sur lesquels LoRaWanProject traite et stocke les bases de données sont exclusivement situés au sein de l’Union Européenne.
-
 LoRaWanProject conserve les données personnelles uniquement pour la durée nécessaire à la réalisation de la finalité pour laquelle elles ont été collectées, à savoir le plus souvent le temps de l’exécution du contrat et plus généralement pour toutes relations d’affaires.
 
 ## Sécurité
@@ -55,31 +43,9 @@ LoRaWanProject assure la sécurité de vos données à caractère personnel en m
 
 ## Information sur vos droits
 
-Les personnes dont les données à caractère personnel sont collectées bénéficient d’un droit d’accès aux données à caractère personnel les concernant, la rectification ou l’effacement de celles-ci, une limitation du traitement, la portabilité des données ainsi que du droit de s’opposer au traitement.
-
+Les personnes dont les données à caractère personnel sont collectées bénéficient d’un droit d’accès les concernant ou l’effacement de celles-ci.
 Ces droits peuvent être exercés en adressant un email à l’attention de notre DPO à l’adresse email suivante : service@lorawanproject.com.
 
-
-## Droit de rectification :
-
-Toute personne dont les données personnelles font l’objet d’un traitement bénéficie du droit d’obtenir la rectification des données à caractère personnel les concernant qui sont inexactes et que ces données soient complétées si la finalité du traitement l’exige le cas échéant.
-Droit à l’effacement
-
-Toute personne dont les données personnelles font l’objet d’un traitement a le droit d’obtenir du responsable du traitement l’effacement desdites données dans les cas suivants :
-- Lorsque les données à caractère personnel ne sont plus nécessaires au regard des finalités pour lesquelles elles ont été collectées ou traitées d’une autre manière ;
-
-- Lorsque les données à caractère personnel doivent être effacées pour respecter une obligation légale qui est prévue par le droit de l’Union ou par le droit de l’État membre auquel le responsable du traitement est soumis ;
-
-Le responsable du traitement pourra toutefois refuser d’effacer les données dans les cas suivants :
-
-- Lorsque la conservation est justifiée par l’intérêt légitime de l’entreprise ;
-    Pour respecter une obligation légale qui requiert le traitement prévu par le droit de l’Union ou par le droit français ;
-- Lorsque le traitement a pour unique objet des fins statistiques ;
-- Lorsque le traitement est nécessaire à la constatation, à l’exercice ou à la défense de droits en justice.
-
-## Droit d’opposition
-
-Toute personne dont les données personnelles font l’objet d’un traitement dispose d’un droit d’opposition à ce traitement dans les conditions suivantes. Cette oposition entraine de fait l'accessibilité au Service.
 
 ## Contact
 

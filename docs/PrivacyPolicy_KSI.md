@@ -1,7 +1,7 @@
 
 # ***Politique de confidentialité***
 
-## Préambule et Définitions
+## Définitions
 *La présente Politique de protection des données a pour objectif de vous informer des droits que vous pouvez faire valoir à l’égard de notre utilisation de vos données personnelles et décrit les mesures que nous mettons en œuvre afin de les protéger.*
 
 **LoRaWanProject** est le nom legal de l'application qui assure le service fournit en traitant vos données personnelles 
@@ -12,15 +12,9 @@
 
 ## Données collectées
 
-LoRaWanProject collecte et traite les données suivantes de ses utilisateurs Service : prénom, nom, email, numéro de téléphone, votre pays, ainsi que la géo-localisation.
+LoRaWanProject collecte et traite exclusivement les données suivantes de ses utilisateurs : prénom, nom, email, numéro de téléphone, votre pays, la géo-localisation.
 
-Nous veillons à ne collecter que des données strictement nécessaires à la finalité des traitements mis en œuvre.
-
-## Finalités de la collecte
-
-Le traitement de vos données est fondé principalement sur la satisfaction des intérêts légitimes poursuivis par LoRaWanProject et pour les finalités suivantes :
-- La gestion de votre inscription et access au service;
-- La localisation de l'appareil en cas d'incendie;
+Nous assurons l'exploitation de vos données exclusivement nécessaires pour le bon fonctionnement de notre système/service 
     
 
 ## Destinataires des données
@@ -31,9 +25,9 @@ La divulgation à des tiers des données à caractère personnel fournies ne pou
 - Sur autorisation du titulaire des données ;
 - Sur demande des autorités légalement compétentes, sur réquisition judiciaire, ou dans le cadre d’un contentieux judiciaire.
 
-## Où stockons-nous les données personnelles ?
+## Stockage des données 
 
-Les données personnelles de nos clients sont stockées soit dans nos bases de données.
+Les données personnelles de nos clients sont stockées dans nos bases de données internes.
 Les serveurs d’hébergement sur lesquels LoRaWanProject traite et stocke les bases de données sont exclusivement situés au sein de l’Union Européenne.
 LoRaWanProject conserve les données personnelles uniquement pour la durée nécessaire à la réalisation de la finalité pour laquelle elles ont été collectées, à savoir le plus souvent le temps de l’exécution du contrat et plus généralement pour toutes relations d’affaires.
 

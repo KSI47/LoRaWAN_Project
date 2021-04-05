@@ -19,7 +19,7 @@ Kit STM32 Nucleo contenant :
 - ChirpStack
 - MQTT
 - Node-Red
-- Graphana
+- Grafana
 - Influxdb
 
 
@@ -39,7 +39,7 @@ Nous avons fais plusieurs modifications et ajouts dans node-red. Cela inclut:
 - Un main flow qui permet d'interpréter les données reçues
 - Le resultat de l'interpretation est sauvegardé dans inlfuxdb. Il se compose de deux variables alertType1 et alertType2, la premièe alerte est à 1 lorsque le bouton poussoir à été pressé. Le second type d'alerte est déclenché lorsque la température atteint un certain seuil.
 
-### Graphana 
+### Grafana 
 Ajout de paneaux pour afficher le status de l'alarme.
 
 

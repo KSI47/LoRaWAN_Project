@@ -1,5 +1,6 @@
-[Source utilisée pour redigé cette fiche](http://les.cahiers-developpement-durable.be/outils/analyse-du-cycle-de-vie)
-Cette fiche contient les différents aspects écologiques du projet. Le cout matériel des produits utilisés se manifeste à travers : 
+# Fiche ACV Réseaux de sirènes connectées en LoRaWAN
+
+Cette fiche d'analyse de cycle de vie (ACV) contient les différents aspects écologiques du projet. Le cout matériel des produits utilisés se manifeste à travers : 
   - le cout de fabrications des composants éléctroniques utilisées 
   - l'énergie utilisé en calcul et en communications  
 
@@ -20,3 +21,6 @@ Cette fiche contient les différents aspects écologiques du projet. Le cout mat
   - **impact** : risques d'empoisonnement en cas de non-recyclage  
 - Remplacement des endpoints ou des gateway en cas de pannes  
   - **impact** : risques de sur exploitation des sources mineraux en cas du non-recyclage 
+
+## Références
+* [Source utilisée pour redigé cette fiche](http://les.cahiers-developpement-durable.be/outils/analyse-du-cycle-de-vie)
